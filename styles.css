@@ -16,98 +16,21 @@ body {
   width: 100%; /* Ensure full width */
 }
 
-/* Thin Diagonal Shadow */
-body::before {
-  content: '';
-  position: absolute;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(
-    45deg,
-    rgba(128, 0, 128, 0) 45%,
-    rgba(128, 0, 128, 0.2) 50%,
-    rgba(128, 0, 128, 0) 55%
-  );
-  top: -100%;
-  left: -100%;
-  transform: translate(0, 0);
-  animation: diagonalLineMove 8s infinite alternate ease-in-out;
-  z-index: -1; /* Keep it behind content */
-  pointer-events: none; /* Ensure it doesn't interfere with user interactions */
-  clip-path: inset(0); /* Prevent it from affecting scrollable bounds */
-}
-
-/* Animation for Diagonal Movement */
-@keyframes diagonalLineMove {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(50%, 50%);
-  }
-}
-
-/* Container */
-.container {
-  text-align: center;
-  width: 90%; /* Ensure it scales with screen size */
-  max-width: 600px; /* Keep max-width for large screens */
-  padding: 20px;
-  margin-top: 140px; /* Adjusted to add space for fixed tabs */
-  z-index: 1; /* Ensure content is above the shadow */
-  flex-grow: 1; /* Allow container to take up remaining space */
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* Center content vertically */
-  align-items: center;
-}
-
+/* Avatar Styling */
 .avatar {
   width: 50px; /* Adjust size as needed */
   height: 50px;
   border-radius: 50%; /* Makes it circular */
-  margin-right: 10px; /* Space between avatar and text */
-  vertical-align: middle; /* Aligns with the text */
   object-fit: cover; /* Ensures the image fits nicely */
+  margin-right: 10px; /* Space between avatar and title */
 }
 
-/* Header */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
-
-header h1 {
-  font-size: 1.5rem;
-}
-
-/* Contact Button */
-.contact-btn {
-  background: #4f46e5;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-  display: flex;
-  align-items: center;
-  gap: 10px; /* Space between icon and text */
-  font-size: 1rem;
-}
-
-.contact-btn i {
-  font-size: 1.2rem; /* Size of the Discord icon */
-}
-
-.contact-btn:hover {
-  background: #6d5dfc;
-}
-
-/* Title */
+/* Title with Avatar */
 h2 {
+  display: flex; /* Align avatar and text horizontally */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center content */
+  gap: 10px; /* Add spacing between avatar and text */
   font-size: 2rem;
   margin: 10px 0;
 }
@@ -150,140 +73,4 @@ h2 span {
   font-size: 1rem;
   line-height: 1.5;
   color: #ccc;
-}
-
-/* Quote Box */
-.quote-box {
-  background: rgba(44, 42, 62, 0.2); /* Much more transparent background */
-  padding: 20px;
-  margin-top: 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2), inset 0 2px 4px rgba(255, 255, 255, 0.1); /* Soft shadow for depth */
-  max-width: 600px; /* Same width as the main content */
-  margin: 40px auto; /* Centered with some spacing */
-  text-align: center;
-  width: 100%; /* Allow full width */
-}
-
-/* Quote Text */
-.quote-text {
-  font-size: 1.2rem;
-  color: #fff;
-  font-style: italic; /* Make it italic for emphasis */
-  line-height: 1.6;
-  font-weight: 400;
-}
-
-/* Tabs Container */
-.tabs {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-bottom: 1rem; /* Add margin at the bottom */
-  position: fixed; /* Keep the tabs at the top */
-  top: 0;
-  left: 0;
-  right: 0;
-  background: rgba(30, 30, 47, 0.7); /* Semi-transparent background */
-  background: linear-gradient(
-    to right,
-    rgba(30, 30, 47, 0.8),
-    rgba(20, 20, 35, 0.7)
-  ); /* Add a subtle gradient */
-  padding: 15px 20px; /* Add padding for better spacing */
-  z-index: 10; /* Ensure tabs are above content */
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Add a subtle border */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Add a shadow for depth */
-  backdrop-filter: blur(10px); /* Frosted glass effect */
-  border-radius: 0 0 10px 10px; /* Rounded bottom corners */
-}
-
-/* Tab Buttons */
-.tab {
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 25px; /* Softer rounded corners */
-  background-color: #5c4d7d; /* Muted purple for a more unique look */
-  color: #fff;
-  font-size: 1.1rem;
-  font-weight: 500; /* Slightly lighter font weight */
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  width: auto;
-}
-
-/* Hover State */
-.tab:hover {
-  background-color: #7d6b9d; /* Lighter, softer purple on hover */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow */
-  transform: translateY(-2px); /* Lift the button slightly */
-}
-
-/* Active State */
-.tab.active {
-  background-color: #30253d; /* Darker purple for active state */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Stronger shadow for active */
-  transform: translateY(2px); /* Slightly pressed down effect */
-}
-
-/* Focus State */
-.tab:focus {
-  outline: none; /* Remove default outline */
-  box-shadow: 0 0 8px 2px rgba(92, 77, 125, 0.6); /* Glow effect for accessibility */
-}
-
-/* Animations */
-.contact-btn,
-.tags span {
-  transition: transform 0.2s ease;
-}
-
-.contact-btn:hover,
-.tags span:hover {
-  transform: scale(1.1);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .container {
-    width: 90%; /* Adjust container width on smaller screens */
-    padding: 1em;
-  }
-
-  .quote-box {
-    width: 90%;
-    padding: 15px;
-  }
-
-  .tabs {
-    padding: 10px 15px;
-  }
-
-  .tab {
-    padding: 0.5rem 1rem; /* Adjust tab padding on smaller screens */
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .container {
-    width: 100%; /* Full width on very small screens */
-    padding: 1em;
-  }
-
-  .quote-box {
-    width: 100%;
-    padding: 10px;
-  }
-
-  .tabs {
-    flex-direction: column; /* Stack tabs vertically on small screens */
-    padding: 10px 0;
-  }
-
-  .tab {
-    width: 100%; /* Make tabs full width */
-    margin-bottom: 10px;
-  }
 }
