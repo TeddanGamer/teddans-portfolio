@@ -62,6 +62,15 @@ body::before {
   align-items: center;
 }
 
+.avatar {
+  width: 50px; /* Adjust size as needed */
+  height: 50px;
+  border-radius: 50%; /* Makes it circular */
+  margin-right: 10px; /* Space between avatar and text */
+  vertical-align: middle; /* Aligns with the text */
+  object-fit: cover; /* Ensures the image fits nicely */
+}
+
 /* Header */
 header {
   display: flex;
