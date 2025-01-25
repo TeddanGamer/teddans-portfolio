@@ -18,8 +18,8 @@ body {
 
 /* Avatar Styling */
 .avatar {
-  width: 50px; /* Adjust size as needed */
-  height: 50px;
+  width: 200px; /* Adjust size as needed */
+  height: 200px;
   border-radius: 50%; /* Makes it circular */
   object-fit: cover; /* Ensures the image fits nicely */
   margin-right: 10px; /* Space between avatar and title */
