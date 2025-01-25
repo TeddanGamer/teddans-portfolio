@@ -62,23 +62,6 @@ body::before {
   align-items: center;
 }
 
-/* Avatar image */
-.avatar img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  border: 2px solid #fff;
-  margin: 20px 0;
-}
-
-/* Centering Avatar and Content */
-.avatar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column; /* Stack avatar and text vertically */
-}
-
 /* Header */
 header {
   display: flex;
