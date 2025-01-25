@@ -97,16 +97,18 @@ header h1 {
   background: #6d5dfc;
 }
 
-/* Container for avatar */
+/* Parent container for avatar */
 .avatar {
-  display: flex; /* Use Flexbox */
+  display: flex; /* Enable Flexbox */
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
-  margin: 0 auto; /* Center container itself if needed */
-  text-align: center; /* Center text inside */
+  width: 100%; /* Ensure it spans full width */
+  height: auto; /* Adjust as needed */
+  margin: 0 auto; /* Center if parent allows */
+  text-align: center;
 }
 
-/* Avatar image styling */
+/* Avatar image */
 .avatar img {
   width: 100px;
   height: 100px;
